@@ -2,56 +2,20 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <title>ভূমি উন্নয়ন কর দাখিলা</title>
-  <style>
-    body {
-      font-family: "SolaimanLipi", sans-serif;
-      background-color: #f4ffe4;
-      margin: 0;
-      padding: 20px;
-    }
-    .container {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 800px;
-      margin: auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .print-btn {
-      background-color: #1976d2;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 5px;
-      margin-bottom: 20px;
-    }
-    iframe {
-      width: 100%;
-      height: 800px;
-      border: none;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>অনলাইন দাখিলা রসিদ</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="container">
+    <h1>ভূমি উন্নয়ন কর রসিদ</h1>
+    <input type="text" id="receiptId" placeholder="রসিদ নম্বর লিখুন" />
+    <button onclick="loadReceipt()">দেখুন</button>
 
-  <div class="container" id="dakhila-section">
-    <button class="print-btn" onclick="printDiv('dakhila-section')">প্রিন্ট</button>
-    <iframe src="ভূমি উন্নয়ন কর_ Dakhila.pdf"></iframe>
+    <div id="receiptArea" style="display: none;"></div>
   </div>
 
-  <script>
-    function printDiv(divId) {
-      var printContents = document.getElementById(divId).innerHTML;
-      var originalContents = document.body.innerHTML;
-      document.body.innerHTML = printContents;
-      window.print();
-      document.body.innerHTML = originalContents;
-    }
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
